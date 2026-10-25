@@ -63,7 +63,7 @@ Both are in `.gitignore` — your key stays safe.
 
 ## 90-second live demo script
 
-1. **Open the app** → Show the landing page with `Mohalla Mic 🎙️🏏` header and `SARVAM-POWERED` badge.
+1. **Open the app** → Show the landing page with `AutoScore 🎙️🏏` header and `SARVAM-POWERED` badge.
 2. **Demo mode** → Toggle OFF Live Sarvam mode. Click `🏏 Record this ball` three times — the pre-loaded calls will auto-cycle:
    - Four by Arjun → score jumps to `4/0`
    - Wide ball → score shows `5/0`
@@ -71,7 +71,7 @@ Both are in `.gitignore` — your key stays safe.
 3. **Show tabs** → Flip through Match feed (commentary + transcripts), Scorecard (batting/bowling tables), and Wagon wheel (shot map).
 4. **Match memory** → Go to Match memory tab, click `✨ Create match memory` → a WhatsApp-ready Hinglish recap appears.
 5. **Live mode** (if Wi-Fi is stable) → Toggle ON Live Sarvam mode. Record a real voice call → show Saaras transcription and Sarvam-105B interpretation working end-to-end.
-6. **Close** → "Mohalla Mic preserves the personality of your local match — speak naturally, Sarvam handles the rest."
+6. **Close** → "AutoScore preserves the personality of your local match — speak naturally, Sarvam handles the rest."
 
 ---
 

@@ -1,5 +1,5 @@
 """
-Mohalla Mic 🎙️🏏
+AutoScore 🎙️🏏
 Voice-first gully-cricket scorekeeper powered by Sarvam AI.
 """
 
@@ -383,7 +383,7 @@ def wagon_wheel() -> go.Figure:
 # ─── Page config & custom CSS ──────────────────────────────────────────────────
 
 st.set_page_config(
-    page_title="Mohalla Mic 🎙️🏏",
+    page_title="AutoScore 🎙️🏏",
     page_icon="🏏",
     layout="centered",
 )
@@ -570,7 +570,7 @@ api_key = get_api_key()
 st.markdown("""
 <div style="text-align:center; margin-bottom:0.3rem;">
     <div style="font-size:2.4rem; font-weight:800; letter-spacing:1px; color:#1a1a2e;">
-        Mohalla Mic 🎙️🏏
+        AutoScore 🎙️🏏
     </div>
     <div style="font-size:1rem; color:#0e7490; font-style:italic; margin-top:0.1rem;">
         Bol ke score karo. Yaad ban ke ghar le jao.
