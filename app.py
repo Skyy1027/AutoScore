@@ -175,20 +175,23 @@ def extract_ball_data(transcript: str, match_state: dict, api_key: str) -> dict:
         "Content-Type": "application/json",
     }
     payload = {
-        "model": "sarvam-105b",
+        "model": "sarvam-105b-conversations",
         "messages": [
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_msg},
         ],
         "temperature": 0.2,
-        "max_tokens": 220,
+        "max_tokens": 500,
         "response_format": {"type": "json_object"},
     }
     resp = requests.post(SARVAM_CHAT_URL, headers=headers, json=payload, timeout=30)
     resp.raise_for_status()
-    raw = resp.json()["choices"][0]["message"]["content"]
-    # Strip accidental markdown fences
+    msg = resp.json()["choices"][0]["message"]
+    raw = msg.get("content") or msg.get("reasoning_content") or ""
     raw = raw.strip()
+    if not raw:
+        raise ValueError("Sarvam model returned empty content.")
+    # Strip accidental markdown fences
     if raw.startswith("```"):
         raw = raw.split("\n", 1)[-1]
     if raw.endswith("```"):
@@ -218,15 +221,17 @@ def generate_match_memory(api_key: str | None) -> str:
             "Content-Type": "application/json",
         }
         payload = {
-            "model": "sarvam-105b",
+            "model": "sarvam-105b-conversations",
             "messages": [{"role": "user", "content": prompt}],
             "temperature": 0.7,
-            "max_tokens": 120,
+            "max_tokens": 300,
         }
         try:
             resp = requests.post(SARVAM_CHAT_URL, headers=headers, json=payload, timeout=30)
             resp.raise_for_status()
-            return resp.json()["choices"][0]["message"]["content"].strip()
+            msg = resp.json()["choices"][0]["message"]
+            content = msg.get("content") or msg.get("reasoning_content") or ""
+            return content.strip()
         except Exception as e:
             return f"⚠️ API error: {e}"
     # Demo fallback
