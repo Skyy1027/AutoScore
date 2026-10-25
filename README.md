@@ -2,6 +2,8 @@
 
 **Bol ke score karo. Yaad ban ke ghar le jao.**
 
+> 🚀 **Live Demo URL**: [https://groove-committed-insurance-limitations.trycloudflare.com](https://groove-committed-insurance-limitations.trycloudflare.com)
+
 AutoScore is a voice-first scorekeeper for informal Indian gully cricket, powered by [Sarvam AI](https://www.sarvam.ai). Instead of tapping score buttons, just say what happened:
 
 - *"Arjun ne covers ke upar four maara."*
