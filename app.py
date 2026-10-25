@@ -357,9 +357,9 @@ def wagon_wheel() -> go.Figure:
         fig.add_trace(go.Scatter(
             x=[bx], y=[by], mode="markers+text",
             marker=dict(size=size, color=color, opacity=0.85,
-                        line=dict(color="white", width=1)),
+                        line=dict(color="#fff", width=1)),
             text=[str(runs)], textposition="top center",
-            textfont=dict(size=10, color="white"),
+            textfont=dict(size=10, color="#1a1a2e"),
             showlegend=False,
             hovertext=ev.get("commentary", ""),
             hoverinfo="text",
@@ -367,8 +367,8 @@ def wagon_wheel() -> go.Figure:
     fig.update_layout(
         xaxis=dict(visible=False, range=[-1.5, 1.5]),
         yaxis=dict(visible=False, range=[-1.5, 1.5], scaleanchor="x"),
-        plot_bgcolor="#0a1628",
-        paper_bgcolor="#0a1628",
+        plot_bgcolor="#e8f5e9",
+        paper_bgcolor="#faf7f2",
         margin=dict(l=10, r=10, t=10, b=10),
         height=380,
     )
@@ -390,31 +390,31 @@ st.markdown("""
 /* ── Global ──────────────────────── */
 html, body, [data-testid="stApp"] {
     font-family: 'Outfit', sans-serif;
-    background-color: #0a1628;
-    color: #fdf0d5;
+    background-color: #faf7f2;
+    color: #1a1a2e;
 }
-h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; color: #fdf0d5; }
+h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; color: #1a1a2e; }
 
 /* ── Scoreboard card ─────────────── */
 .score-card {
-    background: linear-gradient(135deg, #11243e 0%, #162d50 100%);
-    border: 1.5px solid #1b3a5c;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
+    border: 1.5px solid #d0d7de;
     border-radius: 18px;
     padding: 1.4rem 1.2rem;
     text-align: center;
     margin-bottom: 0.6rem;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.35);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
 }
 .score-big {
     font-size: 3.4rem;
     font-weight: 800;
     letter-spacing: 2px;
-    color: #fca311;
+    color: #d4700a;
     line-height: 1.1;
 }
 .score-meta {
     font-size: 1rem;
-    color: #8ecae6;
+    color: #0e7490;
     margin-top: 0.2rem;
 }
 .over-pills {
@@ -433,40 +433,41 @@ h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; color: #fdf0d5; }
     border-radius: 12px;
     font-size: 0.85rem;
     font-weight: 600;
-    color: #0a1628;
+    color: #fff;
 }
-.pill-run   { background: #8ecae6; }
-.pill-four  { background: #fca311; }
+.pill-run   { background: #0e7490; }
+.pill-four  { background: #d4700a; }
 .pill-six   { background: #e63946; color: #fff; }
 .pill-wkt   { background: #e63946; color: #fff; }
-.pill-extra { background: #b5838d; }
-.pill-dot   { background: #555e68; color: #ccc; }
+.pill-extra { background: #9d6b8e; }
+.pill-dot   { background: #b0b8c1; color: #fff; }
 
 /* ── Player strip ────────────────── */
 .player-strip {
-    background: #11243e;
+    background: #ffffff;
     border-radius: 14px;
     padding: 0.8rem 0.6rem;
-    border: 1px solid #1b3a5c;
+    border: 1px solid #d0d7de;
     text-align: center;
     margin-bottom: 0.4rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 .player-name {
     font-size: 1.05rem;
     font-weight: 700;
-    color: #fdf0d5;
+    color: #1a1a2e;
 }
 .player-stat {
     font-size: 0.85rem;
-    color: #8ecae6;
+    color: #0e7490;
 }
-.on-strike { border-left: 3px solid #fca311; }
+.on-strike { border-left: 3px solid #d4700a; }
 
 /* ── Header tag ──────────────────── */
 .sarvam-tag {
     display: inline-block;
-    background: linear-gradient(90deg, #219ebc, #8ecae6);
-    color: #0a1628;
+    background: linear-gradient(90deg, #0e7490, #38bdf8);
+    color: #fff;
     font-size: 0.65rem;
     font-weight: 700;
     padding: 3px 10px;
@@ -487,38 +488,39 @@ h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; color: #fdf0d5; }
     text-transform: uppercase;
     margin-left: 6px;
 }
-.mode-live { background: #2d6a4f; color: #b7e4c7; }
-.mode-demo { background: #6c3d1f; color: #fca311; }
+.mode-live { background: #d1fae5; color: #065f46; }
+.mode-demo { background: #fef3c7; color: #92400e; }
 
 /* ── Feed event ──────────────────── */
 .feed-event {
-    background: #11243e;
+    background: #ffffff;
     border-radius: 12px;
     padding: 0.75rem 1rem;
     margin-bottom: 0.5rem;
-    border-left: 3px solid #219ebc;
+    border-left: 3px solid #0e7490;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
 .feed-over {
     font-size: 0.75rem;
-    color: #8ecae6;
+    color: #0e7490;
     font-weight: 600;
 }
 .feed-commentary {
     font-size: 0.95rem;
-    color: #fdf0d5;
+    color: #1a1a2e;
     margin-top: 0.15rem;
 }
 .feed-transcript {
     font-size: 0.75rem;
-    color: #888;
+    color: #6b7280;
     margin-top: 0.2rem;
     font-style: italic;
 }
 
 /* ── Buttons ─────────────────────── */
 div.stButton > button {
-    background: linear-gradient(135deg, #219ebc, #023047);
-    color: #fdf0d5;
+    background: linear-gradient(135deg, #0e7490, #0369a1);
+    color: #fff;
     border: none;
     border-radius: 12px;
     font-family: 'Outfit', sans-serif;
@@ -529,14 +531,14 @@ div.stButton > button {
 }
 div.stButton > button:hover {
     transform: scale(1.03);
-    box-shadow: 0 4px 18px rgba(33,158,188,0.45);
+    box-shadow: 0 4px 18px rgba(14,116,144,0.35);
 }
 
 /* ── Tabs ────────────────────────── */
 button[data-baseweb="tab"] {
     font-family: 'Outfit', sans-serif;
     font-weight: 600;
-    color: #8ecae6 !important;
+    color: #0e7490 !important;
 }
 
 /* ── Dataframes ──────────────────── */
@@ -547,7 +549,7 @@ button[data-baseweb="tab"] {
 
 /* ── Audio input ─────────────────── */
 [data-testid="stAudioInput"] label {
-    color: #fdf0d5 !important;
+    color: #1a1a2e !important;
     font-weight: 600;
 }
 </style>
@@ -562,10 +564,10 @@ api_key = get_api_key()
 
 st.markdown("""
 <div style="text-align:center; margin-bottom:0.3rem;">
-    <div style="font-size:2.4rem; font-weight:800; letter-spacing:1px;">
+    <div style="font-size:2.4rem; font-weight:800; letter-spacing:1px; color:#1a1a2e;">
         Mohalla Mic 🎙️🏏
     </div>
-    <div style="font-size:1rem; color:#8ecae6; font-style:italic; margin-top:0.1rem;">
+    <div style="font-size:1rem; color:#0e7490; font-style:italic; margin-top:0.1rem;">
         Bol ke score karo. Yaad ban ke ghar le jao.
     </div>
     <span class="sarvam-tag">SARVAM-POWERED</span>
@@ -609,7 +611,7 @@ st.markdown(f"""
         Overs: {overs_display(s['legal_balls'])} &nbsp;|&nbsp;
         RR: {run_rate(s['runs'], s['legal_balls'])}
     </div>
-    <div class="over-pills">{pill_html if pill_html else '<span style="color:#555;">New over</span>'}</div>
+    <div class="over-pills">{pill_html if pill_html else '<span style="color:#b0b8c1;">New over</span>'}</div>
 </div>
 """, unsafe_allow_html=True)
 
@@ -776,16 +778,16 @@ tab_feed, tab_card, tab_wagon, tab_memory = st.tabs(
 with tab_feed:
     events_rev = list(reversed(s["events"]))
     if not events_rev:
-        st.markdown("<div style='text-align:center;color:#555;padding:2rem;'>No balls yet. Bol ke shuru karo! 🎤</div>", unsafe_allow_html=True)
+        st.markdown("<div style='text-align:center;color:#6b7280;padding:2rem;'>No balls yet. Bol ke shuru karo! 🎤</div>", unsafe_allow_html=True)
     for ev in events_rev:
         pill = ball_pill_label(ev)
         st.markdown(f"""
         <div class="feed-event">
             <span class="feed-over">{ev.get('over_display','')}</span>
             &nbsp;
-            <span style="background:#fca311;color:#0a1628;padding:2px 8px;border-radius:8px;font-weight:700;font-size:0.85rem;">{pill}</span>
+            <span style="background:#d4700a;color:#fff;padding:2px 8px;border-radius:8px;font-weight:700;font-size:0.85rem;">{pill}</span>
             &nbsp;
-            <span style="font-size:0.85rem;color:#8ecae6;">{ev.get('total_score','')}</span>
+            <span style="font-size:0.85rem;color:#0e7490;">{ev.get('total_score','')}</span>
             <div class="feed-commentary">{ev.get('commentary','')}</div>
             <div class="feed-transcript">Heard: "{ev.get('transcript','')}"</div>
         </div>
